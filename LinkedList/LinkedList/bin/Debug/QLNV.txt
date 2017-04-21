@@ -1,8 +1,7 @@
-=====Chen	IT	7/7/2017 12:00:00 AM	3
-=====Chen	IT	7/7/2017 12:00:00 AM	3
-A	Chu Tich	4/21/1998 12:00:00 AM	3
-E	Tester	12/14/1996 12:00:00 AM	2
-D	Ve Si	2/22/1996 12:00:00 AM	7
-B	Thu Ky	4/4/1980 12:00:00 AM	1.5
-C	Bao Ve	1/24/1970 12:00:00 AM	1.4
-1	1	1/1/0011 12:00:00 AM	1
+Nguyen Thi Lan	Thu Ky	04/04/1997	1.75
+Luc Bang Nhan	Tester	12/14/1996	2
+Dinh Tien Dung	IT	02/22/1996	7
+Nguyen Van Quan	Bao Ve	07/25/1990	1.3
+Ly Nguyen	Bao Ve	07/07/1990	1.5
+Tran Hoan Kiem	Quan Ly Du An	01/24/1985	2.2
+Nguyen Van Anh	Giam Doc	04/21/1982	3

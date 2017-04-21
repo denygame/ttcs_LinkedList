@@ -106,7 +106,7 @@ namespace LinkedList
             newNode.next = previous.next;
             previous.next = newNode;
         }
-        
+
 
         //hàm test in ra node vi tri pos
         public void printNodeByPos(int pos)
@@ -131,6 +131,29 @@ namespace LinkedList
             else { Console.WriteLine("Danh sach rong!"); }
         }
 
+
+        public bool fileTxtIsEmpty()
+        {
+            if (Head != null)
+            {
+                int count = 0;
+                Node current = Head;
+                while (current != null)
+                {
+                    count++;
+                    current = current.next;
+                }
+                if (count != 0) return false;
+            }
+            else
+            {
+                Console.WriteLine("================================================================");
+                Console.WriteLine("\t\t\t>> File rong! <<");
+                Console.WriteLine("================================================================");
+                return true;
+            }
+            return false;
+        }
 
         public void showList(string test = null)
         {
@@ -249,13 +272,11 @@ namespace LinkedList
                     {
                         if (status == 0)
                         {
-                            if (DateTime.Compare(node.BirthDay, testNode.BirthDay) < 0)
-                                break;
+                            if (DateTime.Compare(node.BirthDay, testNode.BirthDay) < 0) break;
                         }
                         else
                         {
-                            if (DateTime.Compare(node.BirthDay, testNode.BirthDay) > 0)
-                                break;
+                            if (DateTime.Compare(node.BirthDay, testNode.BirthDay) > 0) break;
                         }
                         runPos++;
                         testNode = testNode.next;
@@ -269,13 +290,11 @@ namespace LinkedList
                     {
                         if (status == 0)
                         {
-                            if (node.NumOfSalary < testNode1.NumOfSalary)
-                                break;
+                            if (node.NumOfSalary < testNode1.NumOfSalary) break;
                         }
                         else
                         {
-                            if (node.NumOfSalary > testNode1.NumOfSalary)
-                                break;
+                            if (node.NumOfSalary > testNode1.NumOfSalary) break;
                         }
                         runPos++;
                         testNode1 = testNode1.next;
@@ -289,13 +308,11 @@ namespace LinkedList
                     {
                         if (status == 0)
                         {
-                            if (node.Job.ToLower().CompareTo(testNode2.Job.ToLower()) < 0)
-                                break;
+                            if (node.Job.ToLower().CompareTo(testNode2.Job.ToLower()) < 0) break;
                         }
                         else
                         {
-                            if (node.Job.ToLower().CompareTo(testNode2.Job.ToLower()) > 0)
-                                break;
+                            if (node.Job.ToLower().CompareTo(testNode2.Job.ToLower()) > 0) break;
                         }
                         runPos++;
                         testNode2 = testNode2.next;
@@ -558,23 +575,7 @@ namespace LinkedList
 
         #endregion
 
-
-        public void writeFileText(string nameFile)
-        {
-            Node temp = head;
-            string fileName = string.Format(@"{0}", nameFile);
-            using (StreamWriter sw = new StreamWriter(fileName))
-            {
-                while (temp != null)
-                {
-                    string s = temp.Name + "\t" + temp.Job + "\t" + temp.BirthDay + "\t" + temp.NumOfSalary;
-                    sw.WriteLine(s);
-                    temp = temp.next;
-                }
-                sw.Flush();
-            }
-        }
-
+        
     }
 }
 
