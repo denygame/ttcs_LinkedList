@@ -79,6 +79,18 @@ namespace LinkedList
             return count;
         }
 
+        private int posOfNode(Node n)
+        {
+            int pos = 0;
+            Node cur = Head;
+            while (cur != null)
+            {
+                if (cur == n) return pos;
+                pos++;
+                cur = cur.next;
+            }
+            return -1;
+        }
 
         //chèn node vào vị trí position
         public void insertNodeInPos(Node node, int position)
@@ -172,6 +184,19 @@ namespace LinkedList
             else { Console.WriteLine("Danh sach rong!"); }
             Console.WriteLine("================================================================");
         }
+
+        /// <summary>
+        /// dùng cho delete, show node xóa ra
+        /// </summary>
+        /// <param name="n">node có dk xóa</param>
+        /// <param name="count">ref change số lượn xóa</param>
+        private void showOneNodeForDelete(Node n, ref int count)
+        {
+            string s = n.BirthDay.ToString("dd/MM/yyyy");
+            Console.WriteLine(n.Name + " " + n.Job + " " + s + " " + n.NumOfSalary);
+            count++;
+        }
+
 
         private void swap(Node temp1, Node temp2)
         {
@@ -324,41 +349,59 @@ namespace LinkedList
             insertNodeInPos(node, pos);
         }
 
+
+
+
+
+
         /// <summary>
         /// làm theo ví dụ, xóa năm hoặc họ tên
         /// </summary>
         /// <param name="key"></param>
         public void delete_byKeyPress(string key)
         {
-            int count = 0;
             Node runNode = Head;
+            int count = 0;
+
             if (FunctionConstant.IsNumber(key))
             {
                 int y = int.Parse(key);
-                do
+                while (runNode.next != null)
                 {
+                    if (head.BirthDay.Year == y)
+                    {
+                        showOneNodeForDelete(head,ref count);
+                        head = head.next;
+                    }
+
                     if (runNode.next.BirthDay.Year == y)
                     {
-                        runNode.next = runNode.next.next; //xóa node
-                        count++;
+                        if (posOfNode(runNode) != -1) showOneNodeForDelete(runNode.next,ref count);
+                        runNode.next = runNode.next.next; // xóa node
                     }
                     else runNode = runNode.next;
                 }
-                while (runNode.next != null);
             }
             else
             {
-                do
+                while (runNode.next != null)
                 {
+                    if (head.Name.Contains(key))
+                    {
+                        showOneNodeForDelete(head, ref count);
+                        head = head.next;
+                    }
+
                     if (runNode.next.Name.Contains(key))
                     {
+                        if (posOfNode(runNode) != -1) showOneNodeForDelete(runNode.next, ref count);
                         runNode.next = runNode.next.next; // xóa node
-                        count++;
                     }
                     else runNode = runNode.next;
                 }
-                while (runNode.next != null);
             }
+
+
             if (count == 0)
                 Console.WriteLine("\nKhong co tu khoa nay");
             else
@@ -400,8 +443,9 @@ namespace LinkedList
             if (key.Contains("/") /*|| key.Contains("-")*/) findByBirthDay(key);
             else
             {
-                if (checkFindName(key)) findByName(key);
-                if (checkFindJob(key)) findByJob(key);
+                string keyLower = key.ToLower();
+                if (checkFindName(keyLower)) findByName(keyLower);
+                if (checkFindJob(keyLower)) findByJob(keyLower);
             }
 
             if (timesShowResult == 0) showErrorFindStaff();
@@ -483,7 +527,7 @@ namespace LinkedList
             Node current = head;
             while (current != null)
             {
-                string name = current.Name/*.ToLower()*/;
+                string name = current.Name.ToLower();
                 if (name.Contains(key))
                 {
                     timesShowResult++;
@@ -501,7 +545,7 @@ namespace LinkedList
             Node current = head;
             while (current != null)
             {
-                string name = current.Job/*.ToLower()*/;
+                string name = current.Job.ToLower();
                 if (name.Contains(key))
                 {
                     timesShowResult++;
@@ -530,7 +574,7 @@ namespace LinkedList
             Node current = head;
             while (current != null)
             {
-                string name = current.Name/*.ToLower()*/;
+                string name = current.Name.ToLower();
                 if (name.Contains(key)) return true;
                 current = current.next;
             }
@@ -542,7 +586,7 @@ namespace LinkedList
             Node current = head;
             while (current != null)
             {
-                string job = current.Job/*.ToLower()*/;
+                string job = current.Job.ToLower();
                 if (job.Contains(key)) return true;
                 current = current.next;
             }
@@ -575,7 +619,7 @@ namespace LinkedList
 
         #endregion
 
-        
+
     }
 }
 

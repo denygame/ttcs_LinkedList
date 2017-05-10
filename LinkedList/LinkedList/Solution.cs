@@ -102,7 +102,10 @@ namespace LinkedList
         }
 
 
-
+        public void showList_0()
+        {
+            list.showList();
+        }
 
         public void read_1()
         {
@@ -146,13 +149,15 @@ namespace LinkedList
 
         public void delete_4()
         {
-            Console.Write("\n </> Cau 4: Nhap tu khoa xoa nhan vien:");
+            Console.WriteLine("\n </> Cau 4: Nhap tu khoa <Ho ten va Nam sinh> xoa nhan vien");
+            Console.Write("=> Tu Khoa: ");
             list.delete_byKeyPress(Console.ReadLine());
         }
         
         public void find_5()
         {
-            Console.Write("\n </> Cau 5: Nhap tu khoa tim nhan vien:");
+            Console.WriteLine("\n </> Cau 5: Nhap tu khoa <Ho ten, Chuc vu, Nam sinh, He so luong, Ngay thang nam sinh (theo dang dd/MM/yyyy)> tim nhan vien");
+            Console.Write("=> Tu Khoa: ");
             list.findStaff(Console.ReadLine());
         }
 
