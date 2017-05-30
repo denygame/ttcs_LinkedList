@@ -43,7 +43,7 @@ namespace LinkedList
             if (FunctionConstant.IsNumber(day))
             {
                 d = int.Parse(day);
-                if (d > 31)
+                if (d > 31 || d <= 0)
                 {
                     Console.Write("Nhap ngay khong dung!");
                     goto label_day;
@@ -57,7 +57,7 @@ namespace LinkedList
             if (FunctionConstant.IsNumber(month))
             {
                 m = int.Parse(month);
-                if (m > 12)
+                if (m > 12 || m <= 0)
                 {
                     Console.Write("Nhap thang khong dung!");
                     goto label_month;
@@ -68,7 +68,15 @@ namespace LinkedList
             label_year:
             Console.Write("\t + Nhap nam: ");
             year = Console.ReadLine();
-            if (FunctionConstant.IsNumber(year)) y = int.Parse(year);
+            if (FunctionConstant.IsNumber(year))
+            {
+                y = int.Parse(year);
+                if (y <= 0)
+                {
+                    Console.Write("Nhap nam khong dung!");
+                    goto label_year;
+                }
+            }
             else { Console.Write("Nhap sai, chi nhap so!\t"); goto label_year; }
 
             label_num:

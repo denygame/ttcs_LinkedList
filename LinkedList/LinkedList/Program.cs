@@ -8,6 +8,9 @@ namespace LinkedList
 {
     class Program
     {
+        /*Nguyễn Thanh Huy - CN14A - 1451120025
+          Nguyễn Quý Tùng - CN14A - 1451120064*/
+
         static void Main(string[] args)
         {
             Solution solution = new Solution();
@@ -42,6 +45,10 @@ namespace LinkedList
                     case 8: Console.ReadKey(); break;
                     default: Console.WriteLine("Khong co chuc nang nay!!!"); goto label;
                 }
+            }
+            else
+            {
+                Console.WriteLine("Khong co chuc nang nay!!!"); goto label;
             }
         }
     }

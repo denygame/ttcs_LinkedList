@@ -360,54 +360,61 @@ namespace LinkedList
         /// <param name="key"></param>
         public void delete_byKeyPress(string key)
         {
-            Node runNode = Head;
-            int count = 0;
-
-            if (FunctionConstant.IsNumber(key))
+            if (countNode() != 0)
             {
-                int y = int.Parse(key);
-                while (runNode.next != null)
-                {
-                    if (head.BirthDay.Year == y)
-                    {
-                        showOneNodeForDelete(head,ref count);
-                        head = head.next;
-                    }
+                Node runNode = Head;
+                int count = 0;
 
-                    if (runNode.next.BirthDay.Year == y)
+                if (FunctionConstant.IsNumber(key))
+                {
+                    int y = int.Parse(key);
+                    while (runNode.next != null)
                     {
-                        if (posOfNode(runNode) != -1) showOneNodeForDelete(runNode.next,ref count);
-                        runNode.next = runNode.next.next; // xóa node
+                        if (head.BirthDay.Year == y)
+                        {
+                            showOneNodeForDelete(head, ref count);
+                            head = head.next;
+                        }
+
+                        if (runNode.next.BirthDay.Year == y)
+                        {
+                            if (posOfNode(runNode) != -1) showOneNodeForDelete(runNode.next, ref count);
+                            runNode.next = runNode.next.next; // xóa node
+                        }
+                        else runNode = runNode.next;
                     }
-                    else runNode = runNode.next;
+                }
+                else
+                {
+                    while (runNode.next != null)
+                    {
+                        if (head.Name.Contains(key))
+                        {
+                            showOneNodeForDelete(head, ref count);
+                            head = head.next;
+                        }
+
+                        if (runNode.next.Name.Contains(key))
+                        {
+                            if (posOfNode(runNode) != -1) showOneNodeForDelete(runNode.next, ref count);
+                            runNode.next = runNode.next.next; // xóa node
+                        }
+                        else runNode = runNode.next;
+                    }
+                }
+
+
+                if (count == 0)
+                    Console.WriteLine("\nKhong co tu khoa nay");
+                else
+                {
+                    Console.WriteLine("\nCo {0} nhan vien bi xoa", count);
+                    showList("CAC NHAN VIEN CON LAI");
                 }
             }
             else
             {
-                while (runNode.next != null)
-                {
-                    if (head.Name.Contains(key))
-                    {
-                        showOneNodeForDelete(head, ref count);
-                        head = head.next;
-                    }
-
-                    if (runNode.next.Name.Contains(key))
-                    {
-                        if (posOfNode(runNode) != -1) showOneNodeForDelete(runNode.next, ref count);
-                        runNode.next = runNode.next.next; // xóa node
-                    }
-                    else runNode = runNode.next;
-                }
-            }
-
-
-            if (count == 0)
-                Console.WriteLine("\nKhong co tu khoa nay");
-            else
-            {
-                Console.WriteLine("\nCo {0} nhan vien bi xoa", count);
-                showList("CAC NHAN VIEN CON LAI");
+                Console.WriteLine("\n\n==> Danh sach rong!!!");
             }
         }
 

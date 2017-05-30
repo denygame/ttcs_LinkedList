@@ -1,0 +1,7 @@
+Nguyen Van Anh	Giam Doc	04/21/1982	3
+Nguyen Thi Lan	Thu Ky	04/04/1997	1.75
+Tran Hoan Kiem	Quan Ly Du An	01/24/1985	2.2
+Dinh Tien Dung	IT	02/22/1996	7
+Luc Bang Nhan	Tester	12/14/1996	2
+Ly Nguyen	Bao Ve	07/07/1990	1.5
+Nguyen Van Quan	Bao Ve	07/25/1990	1.3
