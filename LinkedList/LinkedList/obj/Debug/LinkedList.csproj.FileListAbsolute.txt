@@ -25,3 +25,9 @@ E:\Doing\ThucTapCoSo\ThucTapCoSo\LinkedList\LinkedList\obj\Debug\LinkedList.pdb
 E:\Doing\ThucTapCoSo\ThucTapCoSo\LinkedList\LinkedList\bin\Debug\LinkedList.exe
 E:\Doing\ThucTapCoSo\ThucTapCoSo\LinkedList\LinkedList\bin\Debug\LinkedList.pdb
 E:\Doing\ThucTapCoSo\ThucTapCoSo\LinkedList\LinkedList\obj\Debug\LinkedList.csprojResolveAssemblyReference.cache
+C:\Users\thanh\Desktop\Save\ThucTapCoSo\LinkedList\LinkedList\bin\Debug\LinkedList.exe.config
+C:\Users\thanh\Desktop\Save\ThucTapCoSo\LinkedList\LinkedList\obj\Debug\LinkedList.exe
+C:\Users\thanh\Desktop\Save\ThucTapCoSo\LinkedList\LinkedList\obj\Debug\LinkedList.pdb
+C:\Users\thanh\Desktop\Save\ThucTapCoSo\LinkedList\LinkedList\bin\Debug\LinkedList.exe
+C:\Users\thanh\Desktop\Save\ThucTapCoSo\LinkedList\LinkedList\bin\Debug\LinkedList.pdb
+C:\Users\thanh\Desktop\Save\ThucTapCoSo\LinkedList\LinkedList\obj\Debug\LinkedList.csprojResolveAssemblyReference.cache

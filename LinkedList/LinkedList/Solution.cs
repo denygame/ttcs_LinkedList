@@ -142,8 +142,11 @@ namespace LinkedList
         public void read_1()
         {
             Console.Write("\n </> Doc file text QLNV.txt.\n\n");
-            if (!FunctionConstant.readFileText(list)) showDataDefault();
-            if (list.fileTxtIsEmpty()) showDataDefault();
+            if (!FunctionConstant.readFileText(list) && list.Head == null) showDataDefault();
+            else
+            {
+                if (list.fileTxtIsEmpty()) showDataDefault();
+            }
             list.showList();
         }
 

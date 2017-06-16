@@ -76,8 +76,9 @@ namespace LinkedList
             }
             catch (Exception e)
             {
-                Console.WriteLine("Khong the doc du lieu tu file da cho: ");
-                Console.WriteLine(e.Message);
+                Console.WriteLine("Co loi phat sinh: ");
+                Console.WriteLine(e.Message + "\n");
+                //if (list.Head != null) list.showList();
                 return false;
             }
             return true;
