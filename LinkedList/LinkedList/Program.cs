@@ -25,7 +25,8 @@ namespace LinkedList
             Console.WriteLine("\t 5: Tim Kiem Nhan Vien");
             Console.WriteLine("\t 6: Ghi File");
             Console.WriteLine("\t 7: Xoa Man Hinh");
-            Console.WriteLine("\t 8: Dung Chuong Trinh");
+            Console.WriteLine("\t 8: Them 1 Nhan Vien (test chen cuoi)");
+            Console.WriteLine("\t 9: Dung Chuong Trinh");
             Console.WriteLine("************************************************\n\n");
             Console.Write("\t====> Chon Chuc Nang: ");
             string chucNang = Console.ReadLine();
@@ -42,7 +43,8 @@ namespace LinkedList
                     case 5: solution.find_5(); goto label;
                     case 6: solution.writeFile_6(); goto label;
                     case 7: System.Console.Clear(); goto label;
-                    case 8: Console.ReadKey(); break;
+                    case 8: solution.them(); goto label;
+                    case 9: Console.ReadKey(); break;
                     default: Console.WriteLine("Khong co chuc nang nay!!!"); goto label;
                 }
             }

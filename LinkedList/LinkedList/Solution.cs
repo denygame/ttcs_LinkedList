@@ -30,7 +30,7 @@ namespace LinkedList
             int d, m, y;
             double num;
 
-            Console.WriteLine("\n </> Cau 3: Nhap nhan vien can chen!\n");
+            Console.WriteLine("\n </> Nhap nhan vien can chen!\n");
             Console.Write("=> Nhap ho ten: ");
             name = Console.ReadLine();
             Console.Write("=> Nhap chuc vu: ");
@@ -87,6 +87,19 @@ namespace LinkedList
             return new Node(name, job, new DateTime(y, m, d), num);
         }
 
+        private void showDataDefault()
+        {
+            label:
+            Console.Write("\nBan co muon hien thi bo du lieu mac dinh? <c/k>: ");
+            string kp = Console.ReadLine();
+            switch (kp)
+            {
+                case "c": FunctionConstant.dataDefault(list); break;
+                case "k": Console.WriteLine(); return;
+                default: Console.WriteLine("\n===> Co: c, Khong: k\n"); goto label;
+            }
+        }
+
         private int show_choseSort_2(string str)
         {
             int n;
@@ -110,6 +123,17 @@ namespace LinkedList
         }
 
 
+
+
+
+        public void them()
+        {
+            Node n = inputDataNode_3();
+            list.addTail(n);
+            Console.WriteLine();
+            list.showList();
+        }
+
         public void showList_0()
         {
             list.showList();
@@ -117,16 +141,15 @@ namespace LinkedList
 
         public void read_1()
         {
-            Console.Write("\n </> Cau 1: Doc file text QLNV.txt.\n\n");
-            if (!FunctionConstant.readFileText(list))
-                FunctionConstant.dataDefalt(list);
-            if (list.fileTxtIsEmpty()) FunctionConstant.dataDefalt(list);
+            Console.Write("\n </> Doc file text QLNV.txt.\n\n");
+            if (!FunctionConstant.readFileText(list)) showDataDefault();
+            if (list.fileTxtIsEmpty()) showDataDefault();
             list.showList();
         }
 
         public void sort_2()
         {
-            Console.WriteLine("\n </> Cau 2: Nhap vao tieu chi sap xep:\n\n1.Ngay thang nam sinh.\n2.He so luong.\n3.Chuc vu.");
+            Console.WriteLine("\n </> Nhap vao tieu chi sap xep:\n\n1.Ngay thang nam sinh.\n2.He so luong.\n3.Chuc vu.");
 
             label:
             Console.Write("\n=>Tieu chi:");
@@ -157,21 +180,21 @@ namespace LinkedList
 
         public void delete_4()
         {
-            Console.WriteLine("\n </> Cau 4: Nhap tu khoa <Ho ten va Nam sinh> xoa nhan vien");
+            Console.WriteLine("\n </> Nhap tu khoa <Ho ten va Nam sinh> xoa nhan vien");
             Console.Write("=> Tu Khoa: ");
             list.delete_byKeyPress(Console.ReadLine());
         }
         
         public void find_5()
         {
-            Console.WriteLine("\n </> Cau 5: Nhap tu khoa <Ho ten, Chuc vu, Nam sinh, He so luong, Ngay thang nam sinh (theo dang dd/MM/yyyy)> tim nhan vien");
+            Console.WriteLine("\n </> Nhap tu khoa <Ho ten, Chuc vu, Nam sinh, He so luong, Ngay thang nam sinh (theo dang dd/MM/yyyy)> tim nhan vien");
             Console.Write("=> Tu Khoa: ");
             list.findStaff(Console.ReadLine());
         }
 
         public void writeFile_6()
         {
-            Console.Write("\n </> Cau 6: Ghi file text.\n\n");
+            Console.Write("\n </> Ghi file text.\n\n");
             FunctionConstant.writeFileText(list);
             Console.WriteLine("==> Chuong trinh da luu danh sach nhan vien ra file QLNV.txt (o thu muc bin)");
         }

@@ -119,8 +119,7 @@ namespace LinkedList
             previous.next = newNode;
         }
 
-
-        //hàm test in ra node vi tri pos
+        //hàm test in ra node vi tri pos (k dùng)
         public void printNodeByPos(int pos)
         {
             if (Head != null)
@@ -142,7 +141,6 @@ namespace LinkedList
             }
             else { Console.WriteLine("Danh sach rong!"); }
         }
-
 
         public bool fileTxtIsEmpty()
         {
@@ -189,7 +187,7 @@ namespace LinkedList
         /// dùng cho delete, show node xóa ra
         /// </summary>
         /// <param name="n">node có dk xóa</param>
-        /// <param name="count">ref change số lượn xóa</param>
+        /// <param name="count">ref change số lượng xóa</param>
         private void showOneNodeForDelete(Node n, ref int count)
         {
             string s = n.BirthDay.ToString("dd/MM/yyyy");
@@ -350,14 +348,7 @@ namespace LinkedList
         }
 
 
-
-
-
-
-        /// <summary>
-        /// làm theo ví dụ, xóa năm hoặc họ tên
-        /// </summary>
-        /// <param name="key"></param>
+        //làm theo ví dụ, xóa năm hoặc họ tên
         public void delete_byKeyPress(string key)
         {
             if (countNode() != 0)
@@ -370,6 +361,7 @@ namespace LinkedList
                     int y = int.Parse(key);
                     while (runNode.next != null)
                     {
+                        //xét runNode.next nên chưa xét head, phải xét hết head
                         if (head.BirthDay.Year == y)
                         {
                             showOneNodeForDelete(head, ref count);
@@ -388,13 +380,13 @@ namespace LinkedList
                 {
                     while (runNode.next != null)
                     {
-                        if (head.Name.Contains(key))
+                        if (head.Name.ToLower().Contains(key.ToLower()))
                         {
                             showOneNodeForDelete(head, ref count);
                             head = head.next;
                         }
 
-                        if (runNode.next.Name.Contains(key))
+                        if (runNode.next.Name.ToLower().Contains(key.ToLower()))
                         {
                             if (posOfNode(runNode) != -1) showOneNodeForDelete(runNode.next, ref count);
                             runNode.next = runNode.next.next; // xóa node

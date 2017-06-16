@@ -35,7 +35,7 @@ namespace LinkedList
             return name;
         }
 
-        public static void dataDefalt(ListOfNode list)
+        public static void dataDefault(ListOfNode list)
         {
             Console.WriteLine("\n\nHIEN THI BO DU LIEU CO SAN:");
             Node n = new Node("Nguyen Van Anh", "Giam Doc", new DateTime(1982, 04, 21), 3);
